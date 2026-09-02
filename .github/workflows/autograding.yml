@@ -13,13 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check assignment files
+      - name: Check files
         run: |
-          echo "Repository files:"
-          find . -maxdepth 3 -type f | sort
-
-      - name: Make test executable
-        run: chmod +x tests/test_solution.sh
+          echo "Checking repository..."
+          ls -la
+          echo "Checking tests directory..."
+          ls -la tests
+          echo "Checking starter directory..."
+          ls -la starter
 
       - name: Run autograding tests
         run: sudo bash tests/test_solution.sh
