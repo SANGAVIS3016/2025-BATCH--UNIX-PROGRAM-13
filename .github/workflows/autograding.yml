@@ -1,0 +1,22 @@
+name: Autograding - Linux User Assignment
+
+on:
+push:
+pull_request:
+workflow_dispatch:
+
+jobs:
+test:
+runs-on: ubuntu-latest
+
+```
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Make test executable
+    run: chmod +x tests/test_solution.sh
+
+  - name: Run autograding tests
+    run: sudo bash tests/test_solution.sh
+```
