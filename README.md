@@ -1,121 +1,143 @@
-# Linux Assignment: Add a User and Display User Details
+# Add User and Display User Details
 
 ## Aim
 
-Create a Linux user named `jeevitha` and display the details of the user using the `id` command.
+To create a user in Linux and display the details of the user using the `id` command.
 
-## Learning Objectives
+## Objective
 
-By completing this assignment, you will learn how to:
+The objective of this assignment is to understand how to:
 
-* Create a Linux user using `useradd`.
-* Verify whether a user exists.
-* Display user and group information using the `id` command.
-* Execute Linux commands from a terminal.
-* Work with shell scripts and GitHub Actions.
+* Create a user in Linux using the `useradd` command.
+* Display user details using the `id` command.
+* Execute Linux commands through a Bash script.
+* Verify the result using automated testing.
 
 ## Algorithm
 
-1. Open the Terminal on a Linux machine.
-2. Create a user named `jeevitha` using the `useradd` command.
-3. Display the details of `jeevitha` using the `id` command.
-4. Verify that the user was created successfully.
-5. Save your solution and push it to GitHub.
-6. GitHub Actions will automatically run the tests.
+**Step 1:** Open the Terminal on your Linux machine.
 
-## Expected Commands
+**Step 2:** Create a user using the `useradd` command.
 
-The basic Linux commands required for this assignment are:
+**Step 3:** Display the details of the user using the `id` command.
+
+**Step 4:** Verify that the user has been created successfully.
+
+**Step 5:** Save the Bash script and push the changes to GitHub.
+
+**Step 6:** GitHub Actions will automatically run the test cases.
+
+## Commands
+
+Use the following Linux commands:
 
 ```bash
-sudo useradd jeevitha
-id jeevitha
+useradd <username>
 ```
 
-> Note: The automated environment runs with sufficient privileges, so your script should not depend on interactively entering a sudo password.
+To display the details of the user:
+
+```bash
+id <username>
+```
 
 ## Student Task
 
-Open:
+Complete the Bash program provided in:
 
 ```text
 starter/solution.sh
 ```
 
-Complete the script so that it:
+The program should:
 
-1. Creates the user `jeevitha`.
-2. Does not fail if the user already exists.
-3. Displays the details of `jeevitha` using the `id` command.
-4. Returns a successful exit status when the task is completed correctly.
+1. Create the required Linux user using `useradd`.
+2. Display the details of the user using `id`.
+3. Execute successfully.
+4. Produce valid user information as output.
 
-## Example Output
+## Expected Output
 
-A successful execution may produce output similar to:
+The output should contain information similar to:
 
 ```text
-uid=1001(jeevitha) gid=1001(jeevitha) groups=1001(jeevitha)
+uid=1001(username) gid=1001(username) groups=1001(username)
 ```
 
-The UID, GID, and group numbers may be different on different Linux systems.
+The UID and GID values may be different depending on the Linux system.
 
-## Submission Instructions
+## Requirements
 
-1. Clone or accept the assignment repository.
-2. Open `starter/solution.sh`.
-3. Complete the script.
-4. Test it locally on a Linux system.
-5. Commit your changes.
+* Use the `useradd` command to create the user.
+* Use the `id` command to display the user details.
+* The user must actually be created in the Linux environment.
+* Do not hard-code the expected output.
+* Do not modify the test files.
+* Do not modify the GitHub Actions workflow.
+* The program should not require interactive input.
 
-Example:
+## Files in the Repository
+
+```text
+├── README.md
+├── starter/
+│   └── solution.sh
+├── tests/
+│   └── test_solution.sh
+├── autograding.json
+└── .github/
+    └── workflows/
+        └── autograding.yml
+```
+
+## Running the Program Locally
+
+Make the script executable:
+
+```bash
+chmod +x starter/solution.sh
+```
+
+Run the program:
+
+```bash
+sudo bash starter/solution.sh
+```
+
+You can verify the user details using:
+
+```bash
+id <username>
+```
+
+## Submission
+
+After completing the assignment, commit and push your changes:
 
 ```bash
 git add starter/solution.sh
-git commit -m "Complete useradd assignment"
+git commit -m "Complete user creation assignment"
 git push
 ```
 
-6. Check the **Actions** tab on GitHub.
-7. Your submission is automatically tested.
+GitHub Actions will automatically run the test cases after the changes are pushed.
 
-## Grading
+## Autograding
 
-| Test                                       |   Marks |
-| ------------------------------------------ | ------: |
-| Correctly creates `jeevitha`               |      40 |
-| User exists after execution                |      20 |
-| Correctly displays user details using `id` |      20 |
-| Script executes successfully               |      10 |
-| Code quality/basic shell scripting         |      10 |
-| **Total**                                  | **100** |
+The assignment is automatically evaluated using GitHub Actions.
 
-## Important Requirements
+The following aspects are tested:
 
-* The username must be exactly `jeevitha`.
-* The solution must use the Linux `useradd` command.
-* The solution must use the Linux `id` command to display the user's details.
-* Do not hard-code fake `id` output.
-* Do not modify the test files.
-* Do not modify the GitHub Actions workflow to bypass the tests.
-
-## Academic Integrity
-
-Write and test your own solution. You may refer to Linux documentation and course materials to understand the commands.
-
-## Local Testing
-
-You can execute the solution with:
-
-```bash
-bash starter/solution.sh
-```
-
-Then verify the user manually:
-
-```bash
-id jeevitha
-```
+| Test                                 |   Marks |
+| ------------------------------------ | ------: |
+| Bash syntax is valid                 |      10 |
+| `useradd` command is used            |      20 |
+| Required user is created             |      30 |
+| `id` command is used                 |      20 |
+| User details are displayed correctly |      10 |
+| Program executes successfully        |      10 |
+| **Total**                            | **100** |
 
 ## Result
 
-After successful completion, the system should contain a user named `jeevitha`, and the `id` command should display information about that user.
+After successful completion, a Linux user should be created and the `id` command should display the user's UID, GID, and group information.
